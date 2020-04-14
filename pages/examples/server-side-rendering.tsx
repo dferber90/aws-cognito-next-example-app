@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { useAuth, AuthTokens, getServerSideAuth } from "../_auth";
-import Nav from "../components/nav";
+import Nav from "../../components/nav";
 export default function ServerSideRendering(props: {
   text: string;
   initialAuth: AuthTokens;

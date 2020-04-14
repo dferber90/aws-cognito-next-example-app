@@ -4,7 +4,7 @@ import { GetServerSideProps } from "next";
 import fetch from "isomorphic-fetch";
 import { getServerSideAuth, AuthTokens, useAuth } from "../_auth";
 import useSWR from "swr";
-import Nav from "../components/nav";
+import Nav from "../../components/nav";
 
 const textEndpoint = "http://localhost:3000/api/text";
 
