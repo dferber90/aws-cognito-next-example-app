@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import fetch from "isomorphic-fetch";
-import { getServerSideAuth, AuthTokens, useAuth } from "../_auth";
+import { getServerSideAuth, AuthTokens, useAuth } from "../../auth";
 import useSWR from "swr";
 import Nav from "../../components/nav";
 

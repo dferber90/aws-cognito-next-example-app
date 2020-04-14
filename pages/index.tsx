@@ -7,7 +7,7 @@ import {
   useAuth,
   useAuthFunctions,
   getServerSideAuth,
-} from "./_auth";
+} from "../auth";
 
 const Home = (props: { initialAuth: AuthTokens }) => {
   const auth = useAuth(props.initialAuth);

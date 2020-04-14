@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { GetStaticProps } from "next";
-import { useAuth } from "../_auth";
+import { useAuth } from "../../auth";
 import Nav from "../../components/nav";
 
 export default function StaticRendering(props: { text: string }) {
