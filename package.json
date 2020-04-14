@@ -11,7 +11,7 @@
   "dependencies": {
     "@aws-amplify/auth": "3.2.3",
     "@aws-amplify/core": "3.2.3",
-    "aws-cognito-next": "3.0.0-beta.4",
+    "aws-cognito-next": "3.0.0-beta.5",
     "base-64": "0.1.0",
     "cookie": "0.4.0",
     "isomorphic-fetch": "2.2.1",
