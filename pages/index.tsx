@@ -2,12 +2,13 @@ import React from "react";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
+import Auth from "@aws-amplify/auth";
 import {
-  getServerSideAuth,
   AuthTokens,
   useAuth,
   useAuthFunctions,
-} from "../aws-cognito-nextjs/auth";
+  getServerSideAuth,
+} from "./_auth";
 
 const Home = (props: { initialAuth: AuthTokens }) => {
   const auth = useAuth(props.initialAuth);
@@ -17,7 +18,7 @@ const Home = (props: { initialAuth: AuthTokens }) => {
     <React.Fragment>
       <div className="container">
         <Head>
-          <title>CSS 2.0</title>
+          <title>aws-cognito-next</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
@@ -48,26 +49,45 @@ const Home = (props: { initialAuth: AuthTokens }) => {
           <button
             type="button"
             onClick={() => {
-              logout();
+              logout("/?hi=ok");
             }}
           >
             sign out
           </button>
         ) : (
-          <button
-            type="button"
-            onClick={() => {
-              // Reconfigure oauth to add the uri of the page which should open
-              // after the sign in
-              const redirectAfterSignIn =
-                window.location.pathname +
-                window.location.search +
-                window.location.hash;
-              login(redirectAfterSignIn);
-            }}
-          >
-            sign in
-          </button>
+          <React.Fragment>
+            <button
+              type="button"
+              onClick={() => {
+                // Reconfigure oauth to add the uri of the page which should open
+                // after the sign in
+                const redirectAfterSignIn =
+                  window.location.pathname +
+                  window.location.search +
+                  window.location.hash;
+                login("/?test=ok");
+              }}
+            >
+              sign in
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                const config = Auth.configure(null);
+                Auth.configure({
+                  oauth: {
+                    ...config.oauth,
+                    redirectSignIn:
+                      "http://localhost:3000/examples/data-fetching",
+                  },
+                });
+                Auth.federatedSignIn();
+              }}
+            >
+              sign in and open data-fetching
+            </button>
+          </React.Fragment>
         )}
 
         <h2>IdTokenData</h2>

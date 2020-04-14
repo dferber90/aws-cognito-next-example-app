@@ -1,5 +1,11 @@
 import React from "react";
-import { Token } from "../aws-cognito-nextjs";
+import { useRouter } from "next/router";
+import { useAuthRedirect } from "aws-cognito-next";
+import queryString from "query-string";
+
+const extractFirst = (value: string | string[]) => {
+  return Array.isArray(value) ? value[0] : value;
+};
 
 // When a user comes back from authenticating, the url looks like this:
 //   /autosignin#id_token=....
@@ -11,9 +17,16 @@ import { Token } from "../aws-cognito-nextjs";
 // user back to the main page. That page can now use SSR as the user will have
 // the necessary cookies ready.
 export default function TokenSetter() {
-  return (
-    <Token>
-      <p>loading..</p>
-    </Token>
-  );
+  const router = useRouter();
+  useAuthRedirect(() => {
+    // We are not using the router here, since the query object will be empty
+    // during prerendering if the page is statically optimized.
+    // So the router's location would return no search the first time.
+    const redirectUriAfterSignIn =
+      extractFirst(queryString.parse(window.location.search).to || "") || "/";
+
+    router.replace(redirectUriAfterSignIn);
+  });
+
+  return <p>loading..</p>;
 }

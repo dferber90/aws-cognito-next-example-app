@@ -1,11 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import { GetStaticProps, GetServerSideProps } from "next";
-import {
-  useAuth,
-  AuthTokens,
-  getServerSideAuth,
-} from "../../aws-cognito-nextjs";
+import { GetServerSideProps } from "next";
+import { useAuth, AuthTokens, getServerSideAuth } from "../_auth";
 export default function ServerSideRendering(props: {
   text: string;
   initialAuth: AuthTokens;

@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "pems:prepare": "prepare-pems --region $USER_POOL_REGION --userPoolId $USER_POOL_ID"
   },
   "dependencies": {
     "@aws-amplify/auth": "3.2.3",
     "@aws-amplify/core": "3.2.3",
+    "aws-cognito-next": "3.0.0-beta.3",
     "base-64": "0.1.0",
     "cookie": "0.4.0",
     "isomorphic-fetch": "2.2.1",

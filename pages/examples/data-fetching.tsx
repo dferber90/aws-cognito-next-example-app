@@ -2,11 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import fetch from "isomorphic-fetch";
-import {
-  getServerSideAuth,
-  AuthTokens,
-  useAuth,
-} from "../../aws-cognito-nextjs";
+import { getServerSideAuth, AuthTokens, useAuth } from "../_auth";
 import useSWR from "swr";
 
 const textEndpoint = "http://localhost:3000/api/text";
@@ -33,7 +29,7 @@ export default function Home(props: {
   return (
     <React.Fragment>
       <Head>
-        <title>CSS 2.0</title>
+        <title>aws-cognito-next</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

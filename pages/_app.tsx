@@ -41,8 +41,6 @@ Auth.configure({
   },
 });
 
-console.log(Auth);
-
 function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
