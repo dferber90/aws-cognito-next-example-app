@@ -5,5 +5,5 @@ export default async (
   res: NextApiResponse<{ text: string }>
 ) => {
   console.log(req.headers.authorization);
-  res.status(200).json({ text: process.env.IDP_DOMAIN });
+  res.status(200).json({ text: "hello world" });
 };
