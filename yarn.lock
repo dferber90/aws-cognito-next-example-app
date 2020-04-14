@@ -1816,10 +1816,10 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aws-cognito-next@3.0.0-beta.3:
-  version "3.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/aws-cognito-next/-/aws-cognito-next-3.0.0-beta.3.tgz#c7708dd4ad326d8cedbf6ba92772bfdd38ad5036"
-  integrity sha512-0Co0C6CYpdijo135fVWcxRmBcQHY1CTLusM0co0UXnHPrdbOGkO20IddjJWhax949RSNzStHGvxIUsHrO28rFA==
+aws-cognito-next@3.0.0-beta.4:
+  version "3.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/aws-cognito-next/-/aws-cognito-next-3.0.0-beta.4.tgz#03f11b9a95efea173b18d8b7c16495a7bc9960f5"
+  integrity sha512-dWZ2QFFeK+olyD4rJdrrze6/nEcCYelm4TaAL1gW6rxdNKglk/2hZBNQFSQkQsuInwmt0/vaJtLdiyZPtUtm0g==
   dependencies:
     "@types/base-64" "^0.1.3"
     "@types/cookie" "^0.3.3"

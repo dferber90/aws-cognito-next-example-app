@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { useAuth, AuthTokens, getServerSideAuth } from "../_auth";
+import Nav from "../components/nav";
 export default function ServerSideRendering(props: {
   text: string;
   initialAuth: AuthTokens;
@@ -13,6 +14,7 @@ export default function ServerSideRendering(props: {
       <Head>
         <title>Server-Side Rendering</title>
       </Head>
+      <Nav />
       <h1>Server-Side Rendering</h1>
       <p>
         This site is rendered <b>dynamically</b> on the server (with auth).

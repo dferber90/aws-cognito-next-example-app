@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { useAuth } from "../_auth";
+import Nav from "../components/nav";
 
 export default function StaticRendering(props: { text: string }) {
   const auth = useAuth(null);
@@ -11,6 +12,7 @@ export default function StaticRendering(props: { text: string }) {
       <Head>
         <title>Static Rendering</title>
       </Head>
+      <Nav />
       <h1>Static Rendering</h1>
       <p>
         This site is rendered <b>statically</b> on the server (without auth).
