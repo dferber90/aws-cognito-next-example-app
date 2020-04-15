@@ -3,6 +3,7 @@ import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { useAuth, AuthTokens, getServerSideAuth } from "../../auth";
 import Nav from "../../components/nav";
+import Corner from "../../components/corner";
 export default function ServerSideRendering(props: {
   text: string;
   initialAuth: AuthTokens;
@@ -11,23 +12,24 @@ export default function ServerSideRendering(props: {
 
   return (
     <React.Fragment>
+      <style>{`p { max-width: 400pt; }`}</style>
       <Head>
         <title>Server-Side Rendering</title>
       </Head>
+      <h1>aws-cognito-next</h1>
       <Nav />
-      <h1>Server-Side Rendering</h1>
+      <Corner />
+      <h2>Server-Side Rendering</h2>
       <p>
-        This site is rendered <b>dynamically</b> on the server (with auth).
-      </p>
-      <p>
-        The served HTML will be specific to each client and their auth state.
-        After loading, the client will take over.
+        This site is rendered <b>dynamically</b> on the server (with auth). The
+        served HTML will be specific to each client and their auth state. After
+        loading, the client will take over. Open "View source" to see the
+        server-rendered HTML.
       </p>
       <h3>State from server, dynamically</h3>
       <pre>{props.text}</pre>
-      <hr />
       <h3>Dynamic from server, with takeover on client</h3>
-      <h2>IdTokenData</h2>
+      <h4>IdTokenData</h4>
       <div>
         {auth ? (
           <React.Fragment>
@@ -38,7 +40,7 @@ export default function ServerSideRendering(props: {
           "no id token"
         )}
       </div>
-      <h2>AccessTokenData</h2>
+      <h4>AccessTokenData</h4>
       <div>{auth ? auth.accessTokenData.username : "no access token"}</div>
     </React.Fragment>
   );

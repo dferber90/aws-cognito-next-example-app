@@ -3,32 +3,32 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import { useAuth } from "../../auth";
 import Nav from "../../components/nav";
+import Corner from "../../components/corner";
 
 export default function StaticRendering(props: { text: string }) {
   const auth = useAuth(null);
 
   return (
     <React.Fragment>
+      <style>{`p { max-width: 400pt; }`}</style>
       <Head>
         <title>Static Rendering</title>
       </Head>
+      <h1>aws-cognito-next</h1>
       <Nav />
-      <h1>Static Rendering</h1>
+      <Corner />
+      <h2>Static Rendering</h2>
       <p>
         This site is rendered <b>statically</b> on the server (without auth).
-      </p>
-      <p>
         The served HTML will be the same for every client. After loading, the
-        client will take over and add things like auth.
-      </p>
-      <p>
-        The auth is then added client-side once the page loaded on the server.
+        client will take over and add things like auth. The auth is then added
+        client-side once the page loaded on the server.
       </p>
       <h3>State from server, statically</h3>
       <pre>{props.text}</pre>
-      <hr />
+
       <h3>Static from server, with dynamic auth state from client</h3>
-      <h2>IdTokenData</h2>
+      <h4>IdTokenData</h4>
       <div>
         {auth ? (
           <React.Fragment>
@@ -39,7 +39,7 @@ export default function StaticRendering(props: { text: string }) {
           "no id token"
         )}
       </div>
-      <h2>AccessTokenData</h2>
+      <h4>AccessTokenData</h4>
       <div>{auth ? auth.accessTokenData.username : "no access token"}</div>
     </React.Fragment>
   );

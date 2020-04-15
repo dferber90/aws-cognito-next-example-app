@@ -21,11 +21,6 @@ export default function Nav() {
               <a>Server-Side Rendering</a>
             </Link>
           </li>
-          <li>
-            <Link href="/examples/data-fetching">
-              <a>Data Fetching</a>
-            </Link>
-          </li>
         </ul>
       </li>
     </ul>
