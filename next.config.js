@@ -4,6 +4,7 @@ module.exports = (phase) => {
   switch (phase) {
     case PHASE_DEVELOPMENT_SERVER:
       return {
+        // environment varibales for local development
         env: {
           IDP_DOMAIN: "nextjs-example.auth.eu-central-1.amazoncognito.com",
           USER_POOL_ID: "eu-central-1_nfOfx47Q6",
@@ -15,6 +16,7 @@ module.exports = (phase) => {
       };
     default:
       return {
+        // environment varibales for production
         env: {
           IDP_DOMAIN: "nextjs-example-prod.auth.eu-central-1.amazoncognito.com",
           USER_POOL_ID: "eu-central-1_p25eoCGW4",
