@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "pems:prepare": "prepare-pems --region $USER_POOL_REGION --userPoolId $USER_POOL_ID"
+    "pems:prepare": "prepare-pems"
   },
   "dependencies": {
     "@aws-amplify/auth": "3.2.3",
