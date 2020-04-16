@@ -8,7 +8,7 @@ const extractFirst = (value: string | string[]) => {
 };
 
 // When a user comes back from authenticating, the url looks like this:
-//   /autosignin#id_token=....
+//   /token#id_token=....
 // At this point, there will be no cookies yet. If we would render any page on
 // the server now, it would seem as-if the user is not authenticated yet.
 //
