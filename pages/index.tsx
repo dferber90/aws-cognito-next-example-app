@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { GetServerSideProps } from "next";
 import Nav from "../components/nav";
 import Corner from "../components/corner";
@@ -24,6 +25,20 @@ const Home = (props: { initialAuth: AuthTokens }) => {
         </Head>
 
         <h1>aws-cognito-next</h1>
+
+        <ul>
+          <li>
+            <Link href="/posts/1">
+              <a>Post 1</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts/2">
+              <a>Post 2</a>
+            </Link>
+          </li>
+        </ul>
+
         <p>
           This is an example showing how to use{" "}
           <a href="https://github.com/dferber90/aws-cognito-next">
