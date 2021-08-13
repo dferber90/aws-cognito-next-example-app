@@ -12,7 +12,7 @@
     "@aws-amplify/auth": "3.2.3",
     "@aws-amplify/core": "3.2.3",
     "aws-cognito-next": "3.0.0-beta.5",
-    "next": "9.3.4",
+    "next": "11.1.0",
     "query-string": "6.12.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
