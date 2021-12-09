@@ -12,15 +12,15 @@
     "@aws-amplify/auth": "3.2.3",
     "@aws-amplify/core": "3.2.3",
     "aws-cognito-next": "3.0.4",
-    "next": "9.3.4",
+    "next": "12.0.7",
     "query-string": "6.12.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "swr": "0.2.0"
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "swr": "1.1.0"
   },
   "devDependencies": {
-    "@types/node": "13.11.1",
-    "@types/react": "16.9.34",
-    "typescript": "3.8.3"
+    "@types/node": "16.11.12",
+    "@types/react": "17.0.37",
+    "typescript": "4.5.2"
   }
 }
